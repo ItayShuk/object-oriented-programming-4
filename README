@@ -1,0 +1,95 @@
+itay.shukrun
+
+
+=============================
+=      File description     =
+=============================
+
+SimpleSet  - parent class to sets
+
+OpenHashSet - Set that relays on Wrapper, doing it by linked lists
+
+Wrapper - Creating linked lists and connecting them
+
+ClosedHashSet - Set that relays on string list
+
+CollectionFacadeSet - Implement SimpleSet functions to other java sets
+
+SimpleSetPerformanceAnalyzer - Analyzing and comparing different sets in java by
+the time it takes to complete tests
+
+=============================
+=          Design           =
+=============================
+
+Ive added wrapper class in order to store linked lists
+
+Ive created list of Sets in the Analyzer class,
+using iteration between sets while tests their time.
+
+=============================
+=  Implementation details   =
+=============================
+
+*   Open - Ive created Class to wrap all linked lists, so ive created
+    list of linked list containing strings.
+    When resize is chosen, I copied the table and added
+    the elements to the new copy.
+
+********************
+
+*   Close - Marked the deleted cell with String called FLAG, so that
+    I know by comparing object if my FLAG is there or not.
+
+
+=============================
+=    Answers to questions   =
+=============================
+
+1)
+
+*   Open - Adding takes time because lot of String got the same HashCode
+    which results with one big linked list.
+
+*   Close - Adding takes time to find the right index for adding which is
+    available, also contains runs on O(n), checking the whole list
+    to make sure its not in it already.
+
+********************
+2)
+
+*   Open - Takes time to add when its the same hash,
+    when its not the same hash its consider quick,
+    the contains option is efficient as long as the hashcode is different
+    from others.
+
+*   Close - Takes tons of time to add while items with same hash,
+    if not its consider quick,
+    the contains option is efficient as long as the hashcode is different
+    from others.
+
+*   Tree - Not so efficient while checking if contain regular search value
+    Will chose it if I want to sort the data structure.
+
+*   Linked - Not good at checking if value is in the set,
+    used it to add values as long as its not a set.
+
+*   HashSet - Efficient in all aspects.
+    But gives no information about where the strings are.
+
+*******************
+3)
+
+*   Takes O(n^2) with the closed set to resize itself while open is quicker,
+
+
+*******************
+4)
+
+*   HashSet is adding values much better then Open and Close at same hash condition.
+
+
+
+
+
+
